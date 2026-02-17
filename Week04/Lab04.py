@@ -130,7 +130,7 @@ for nums, n in test_cases:
     print("First half (nums[:" + str(n) + "]): " + str(nums[:n]))
     print("Second half (nums[" + str(n) + ":]): " + str(nums[n:]))
 
-    # Get result
+    # Get result 
     result = shuffle_array(nums, n)
     print("Shuffled: " + str(result))
     print()
