@@ -1,3 +1,4 @@
+
 import random
 
 choices = ["Rock", "Paper", "Scissors"]
@@ -25,8 +26,4 @@ else:
     elif playerChoice == 3 and computerChoice == 2:
         print("Scissors beats Paper - You win!")     
     else:
-<<<<<<< HEAD
         print("You lose!")   
-=======
-        print("You lose!")   
->>>>>>> fa3b99e5b1f86470f34a86d94e49951380921c00
