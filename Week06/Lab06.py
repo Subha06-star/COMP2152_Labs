@@ -1,7 +1,7 @@
 # ============================================================
 #  WEEK 06 LAB: NETWORK DIAGNOSTIC LOGGER
 #  COMP2152 — Windows Version
-#  [Your Name]
+#  Sanzida Islam
 # ============================================================
 #
 #  This program runs network commands (ping, nslookup, ipconfig),
