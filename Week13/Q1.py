@@ -32,36 +32,31 @@ def create_sample_data():
         writer.writeheader()
         writer.writerows(data)
 
-
-# TODO: Complete load_findings(filename)
-#   Open the file, use csv.DictReader to read it
-#   Return a list of dictionaries (one per row)
 def load_findings(filename):
-    pass
+    with open(filename, "r") as f:
+        reader = csv.DictReader(f)
+        return list(reader)
 
 
-# TODO: Complete count_by_field(findings, field)
-#   Loop through findings
-#   Count how many times each unique value of findings[field] appears
-#   Return a dictionary, e.g. {"HIGH": 4, "MEDIUM": 3, "LOW": 5}
 def count_by_field(findings, field):
-    pass
+    counts = {}
+    for f in findings:
+        val = f[field]
+        counts[val] = counts.get(val, 0) + 1
+    return counts
 
-
-# TODO: Complete filter_findings(findings, field, value)
-#   Use a list comprehension to return only findings
+# SELECT * FROM finding WHERE field = value
 #   where finding[field] == value
 def filter_findings(findings, field, value):
-    pass
+    return [f for f in findings if f[field] == value]
 
 
-# TODO: Complete top_subdomains(findings, n)
-#   Count findings per subdomain (use count_by_field)
-#   Sort by count descending
-#   Return the top n as a list of (subdomain, count) tuples
-#   Hint: sorted(counts.items(), key=lambda x: x[1], reverse=True)[:n]
+# counts.items() ===> ("ssh.0x10.cloud", 2)
+# reverse=True ===> it will put the highest counts first
+# [:n] ======> only the top n result
 def top_subdomains(findings, n):
-    pass
+    counts = count_by_field(findings, "subdomain")
+    return sorted(counts.items(), key=lambda x: x[1], reverse=True)[:n]
 
 
 # --- Main (provided) ---
